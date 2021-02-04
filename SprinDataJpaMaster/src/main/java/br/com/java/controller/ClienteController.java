@@ -45,8 +45,6 @@ private static final Logger LOG = LoggerFactory.getLogger(ClienteController.clas
 	}
 	@GetMapping("/updateForm")
 	public String mostrarFormUpdate(@RequestParam("clienteId") int theId, Model model) throws ResourceNotFoundException{
-		
-		System.out.print("Chegou no update");
 		Cliente cliente = service.getCliente(theId);
 		model.addAttribute("cliente", cliente);
 		return "cliente-form";
