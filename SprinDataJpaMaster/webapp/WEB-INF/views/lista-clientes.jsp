@@ -25,7 +25,7 @@
 
 			<div class="panel-info">
 				<div class="panel-heading">
-					<div class="panel-title">Cliente Lista</div>
+					<div class="panel-title"></div>
 				</div>
 
 				<div class="panel-body">
@@ -54,9 +54,8 @@
 								<td>${tempCliente.sobrenome}</td>
 								<td>${tempCliente.email}</td>
 
-								<td><a href="${updateLink}">Alterar</a> <a
-									href="${deleteLink}"
-									onclick="if (!(confirm('Tem certeza de que deseja excluir este cliente?'))) return false">Excluir</a>
+								<td><a href="${updateLink}">Alterar</a> 
+								<a href="${deleteLink}" onclick="if (!(confirm('Tem certeza de que deseja excluir este cliente?'))) return false">Excluir</a>
 								</td>
 
 
