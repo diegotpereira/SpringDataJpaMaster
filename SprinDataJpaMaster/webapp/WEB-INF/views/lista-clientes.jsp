@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;  charset=ISO-8859-1">
-<title>Lista-Cliente</title>
+<title>Lista</title>
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet">
 <%@ page isELIgnored="false"%>
@@ -31,41 +31,38 @@
 
 					<table class="table table-striped table-bordered">
 						<tr>
-						    <th>Id</th>
+							<th>Id</th>
 							<th>Nome</th>
 							<th>SobreNome</th>
 							<th>E-mail</th>
 							<th>Ação</th>
 						</tr>
-						
-						         <c:forEach var="tempCliente" items="${clientes}">
-						               
-						                     <c:url var="updateLink" value="/cliente/updateForm">
-										        <c:param name="clienteId" value="${tempCliente.id}" />
-										      </c:url>
-										      
-										      <c:url var="deleteLink" value="/cliente/delete">
-										        <c:param name="clienteId" value="${tempCliente.id}" />
-										       </c:url>
+						<c:forEach var="tempCliente" items="${clientes}">
 
-                                            
-                                             
-									        <tr>
-									            <td>${tempCliente.id}</td>
-									            <td>${tempCliente.nome}</td>
-									            <td>${tempCliente.sobrenome}</td>
-									            <td>${tempCliente.email}</td>
-									            
-									            <td>
-									            <a href="${updateLink}">Alterar</a>
-									            <a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
-									            </td>
+							<c:url var="updateLink" value="/cliente/updateForm">
+								<c:param name="clienteId" value="${tempCliente.id}" />
+							</c:url>
 
-									        
-									        </tr>
-						     
-                               
-        						</c:forEach>
+							<c:url var="deleteLink" value="/cliente/delete">
+								<c:param name="clienteId" value="${tempCliente.id}" />
+							</c:url>
+
+							<tr>
+								<td>${tempCliente.id}</td>
+								<td>${tempCliente.nome}</td>
+								<td>${tempCliente.sobrenome}</td>
+								<td>${tempCliente.email}</td>
+
+								<td><a href="${updateLink}">Alterar</a> <a
+									href="${deleteLink}"
+									onclick="if (!(confirm('Tem certeza de que deseja excluir este cliente?'))) return false">Excluir</a>
+								</td>
+
+
+							</tr>
+
+
+						</c:forEach>
 					</table>
 				</div>
 			</div>
